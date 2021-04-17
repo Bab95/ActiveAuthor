@@ -11,7 +11,7 @@ import org.json.JSONTokener;
 
 public class JSONReader
 {
-    public static List<String>  getusernames(int threshold){
+    public static List<String>  getUsernames(int threshold){
         List<String> authors = new ArrayList<String>();
         URL url = null;
         int responsecode = 200;
@@ -29,13 +29,11 @@ public class JSONReader
             throw new RuntimeException("HttpResponseCode: " +responsecode);
         }
         else{
-            int total_authors = 0;
             int total_pages = 0;
             try{
             JSONTokener tokener = new JSONTokener(url.openStream());
             JSONObject jobj = new JSONObject(tokener);
             
-            total_authors = Integer.parseInt(jobj.get("total").toString());
             total_pages = Integer.parseInt(jobj.get("total_pages").toString());
             }catch(Exception e){
                 e.printStackTrace();
