@@ -1,4 +1,4 @@
-git <component name="libraryTable">
+<component name="libraryTable">
   <library name="json-20210307">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/.idea/libraries/json-20210307.jar!/" />
